@@ -6,7 +6,7 @@
 $german = array (
 
 	'share:this' => 'Empfehlen',
-	'share:remove' => ''Empfehlung zurücknehmen'',
+	'share:remove' => 'Empfehlung zurücknehmen',
 	
 	/**
 	 * River
