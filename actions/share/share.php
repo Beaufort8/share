@@ -1,35 +1,5 @@
 <?php
 /**
-* Elgg share add action
-*
-*/
-
-/*
-A river in elgg is the place to show the news to users. When you write a blog, or bookmark on something, the blog or bookmark will be added to the river immediately, and your friends or all the user will see the news according to your choice. But how can you add something into river other than by user interface?
-The normal way is to develope a plug-in to make the inner function add_to_river() be open to other webs, for it seems that elgg does not provide such API for outer webs.
-But there is some problem for me to accomplish that. So I find another direct way. Add_to_river() functions adds something to river by some operation on the database. So I write another function in the plug-in for mediawiki to do the same thing, and make wiki pages added to the elgg's river.
-The contents of bookmark in rivers are stored in following tables:
-elgg_river(store bookmarks and its display mode),
-elgg_entities(declare bookmarks' guid, authors and some other information),
-elgg_users_entity(link the author to the bookmark),
-elgg_metadata(link the summary and the linkage url for the bookmark),
-elgg_metastring(store the text for summary and the linkage url).
-Make queries to the above tables in order, a elgg bookmark will be added to the river,
-
-*/
-
-/*
-$title = htmlspecialchars(get_input('title', '', false), ENT_QUOTES, 'UTF-8');
-$description = get_input('description');
-$address = get_input('address');
-$access_id = get_input('access_id');
-$tags = get_input('tags');
-$guid = get_input('guid');
-$share = get_input('share');
-$container_guid = get_input('container_guid', elgg_get_logged_in_user_guid());
-*/
-
-/**
  * Elgg add share action
  *
  */
@@ -54,13 +24,24 @@ if (!$entity->canAnnotate(0, 'share')) {
 	forward(REFERER);
 }
 
+/*
+int 	$entity_guid Entity Guid
+string 	$name Name of annotation
+string 	$value Value of annotation
+string 	$value_type Type of value (default is auto detection)
+int 	$owner_guid Owner of annotation (default is logged in user)
+int 	$access_id Access level of annotation
+*/
+
 $user = elgg_get_logged_in_user_entity();
-$annotation = create_annotation($entity->guid,
-								'share',
-								"share",
-								"",
-								$user->guid,
-								$entity->access_id);
+$annotation = create_annotation(
+	$entity->guid,
+	'share',
+	'share',
+	'',
+	$user->guid,
+	$entity->access_id
+);
 
 // tell user annotation didn't work if that is the case
 if (!$annotation) {
@@ -74,15 +55,6 @@ if ($entity->owner_guid != $user->guid) {
 }
 
 system_message(elgg_echo("share:save:success"));
-
-/*
-add_to_river(
-		$viewname,
-		$action,
-		$user_performing_action_guid,
-		$entity_being_acted_on_guid
-	);
-*/
 
 add_to_river('river/object/share/share','share', elgg_get_logged_in_user_guid(), $entity->guid);
 
