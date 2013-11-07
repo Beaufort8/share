@@ -3,106 +3,61 @@
  * Share English language file
  */
 
-$english = array(
+$english = array (
+
+	'share:this' => 'Share this',
+	'share:remove' => 'Revoke share',
+	
+	/**
+	 * River
+	 */
+	 
+	'river:share:object:default' => '%s shares %s',
+	
+	'river:share:group:default' => '%s shares the group %s',
+
+	'river:share:object:groupforumtopic' => '%s shares the discussion topic %s',
+	'river:share:object:blog' => '%s shares the blog post %s',
+	'river:share:object:bookmarks' => '%s shares the bookmark %s',
+	'river:share:object:file' => '%s shares the file %s',
+	'river:share:object:page' => '%s shares the page %s',
+	'river:share:object:thewire' => '%s shares the post %s',	 
 
 	/**
-	 * Menu items and titles
+	 * Notification
 	 */
-	'share' => "Share",
-	'share:add' => "Share this",
-	'share:edit' => "Edit bookmark",
-	'share:owner' => "%s's bookmarks",
-	'share:friends' => "Friends' bookmarks",
-	'share:everyone' => "All site bookmarks",
-	'share:this' => "Share this",
-	'share:this:group' => "Bookmark in %s",
-	'share:bookmarklet' => "Get bookmarklet",
-	'share:bookmarklet:group' => "Get group bookmarklet",
-	'share:inbox' => "Bookmarks inbox",
-	'share:morebookmarks' => "More bookmarks",
-	'share:more' => "More",
-	'share:with' => "Share with",
-	'share:new' => "A new bookmark",
-	'share:address' => "Address of the bookmark",
-	'share:none' => 'No bookmarks',
 
-	'share:notification' =>
-'%s added a new bookmark:
+	'share:notifications:subject' => '%s shares your post "%s"',
+	'share:notifications:body' => 'Hi %1$s,
 
-%s - %s
-%s
+%2$s shares your post "%3$s" on %4$s
 
-View and comment on the new bookmark:
-%s
+See your original post here:
+
+%5$s
+
+or view %2$s\'s profile here:
+
+%6$s
+
+Thanks,
+%4$s
 ',
-
-	'share:delete:confirm' => "Are you sure you want to delete this resource?",
-
-	'share:numbertodisplay' => 'Number of bookmarks to display',
-
-	'share:shared' => "Bookmarked",
-	'share:visit' => "Visit resource",
-	'share:recent' => "Recent bookmarks",
-
-	/* river */
 	
-	'river:share:object:blog' => '%s share the blog post %s',
-	/* 'river:comment:object:blog' => '%s commented on the blog %s', */
-
-	'river:share:object:bookmarks' => '%s share the bookmarke %s',
-	/* 'river:comment:object:bookmarks' => '%s commented on a bookmark %s', */
-	
-	'river:share:object:file' => '%s share the file %s',
-	/*	'river:comment:object:file' => '%s commented on the file %s', */
-
-	'river:share:object:group' => '%s share the group %s',
-	'river:share:object:groupforumtopic' => '%s share a discussion topic %s',
-
-	'river:share:object:page' => '%s share the page %s',
-
-	'river:share:object:thewire' => "%s share the post %s",
-
-
-	'share:river:annotate' => 'a comment on this bookmark',
-	'share:river:item' => 'an item',
-
-	'item:object:bookmarks' => 'Bookmarks',
-
-	'share:group' => 'Group bookmarks',
-	'share:enablebookmarks' => 'Enable group bookmarks',
-	'share:nogroup' => 'This group does not have any bookmarks yet',
-	'share:more' => 'More bookmarks',
-
-	'share:no_title' => 'No title',
-
-	/**
-	 * Widget and bookmarklet
-	 */
-	'share:widget:description' => "Display your latest bookmarks.",
-
-	'share:bookmarklet:description' =>
-			"The bookmarks bookmarklet allows you to share any resource you find on the web with your friends, or just bookmark it for yourself. To use it, simply drag the following button to your browser's links bar:",
-
-	'share:bookmarklet:descriptionie' =>
-			"If you are using Internet Explorer, you will need to right click on the bookmarklet icon, select 'add to favorites', and then the Links bar.",
-
-	'share:bookmarklet:description:conclusion' =>
-			"You can then save any page you visit by clicking it at any time.",
-
 	/**
 	 * Status messages
 	 */
 
-	'share:save:success' => "Your item was successfully shared.",
-	'share:delete:success' => "Your bookmark was deleted.",
+	'share:save:success' => 'The item was successfully shared.',
+	'share:delete:success' => 'The item was was revoked.',
 
 	/**
 	 * Error messages
 	 */
 
-	'share:save:failed' => "Your bookmark could not be saved. Make sure you've entered a title and address and then try again.",
-	'share:save:invalid' => "The address of the bookmark is invalid and could not be saved.",
-	'share:delete:failed' => "Your bookmark could not be deleted. Please try again.",
+	'share:save:failed' => 'The item could not be shared.',
+	'share:delete:failed' => 'Your share could not be revoked. Please try again.',	
+	
 );
 
 add_translation('en', $english);

@@ -33,7 +33,7 @@ function share_entity_menu_setup($hook, $type, $return, $params) {
 		'name' => 'share',
 		'text' => elgg_view('share/button', array('entity' => $entity)),
 		'href' => false,
-		'priority' => 400,
+		'priority' => 1,
 	);
 	$return[] = ElggMenuItem::factory($options);
 	return $return;
@@ -62,7 +62,7 @@ function share_river_menu_setup($hook, $type, $return, $params) {
 					'href' => false,
 					'text' => elgg_view('share/button', array('entity' => $object)),
 					'is_action' => true,
-					'priority' => 100,
+					'priority' => 1,
 				);
 				$return[] = ElggMenuItem::factory($options);
 
