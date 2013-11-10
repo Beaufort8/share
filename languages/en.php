@@ -57,7 +57,15 @@ Thanks,
 
 	'share:save:failed' => 'The item could not be shared.',
 	'share:delete:failed' => 'Your share could not be revoked. Please try again.',	
-	
+
+	/**
+	 * Widget
+	 */
+
+	'share:widget:name' => 'Shares',
+	'share:widget:description' => 'Shows your shared items.',
+	'share:widget:noshares' => 'No shared items.',
+	'share:widget:numbertodisplay' => 'Number of shares to display',	
 );
 
 add_translation('en', $english);

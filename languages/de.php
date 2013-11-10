@@ -57,6 +57,15 @@ Danke,
 
 	'share:save:failed' => 'Der Beitrag konnte nicht weiter empfohlen werden.',
 	'share:delete:failed' => 'Ihre Empfehlung konnte nicht zurückgenommen werden. Bitte versuchen Sie es erneut',	
+
+	/**
+	 * Widget
+	 */
+
+	'share:widget:name' => 'Empfehlungen',
+	'share:widget:description' => 'Zeigt letzte Empfehlungen.',
+	'share:widget:noshares' => 'Keine Empfehlungen vorhanden.',
+	'share:widget:numbertodisplay' => 'Anzahl der zu zeigenden Empfehlungen',
 	
 );
 

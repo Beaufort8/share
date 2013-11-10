@@ -21,6 +21,12 @@ function share_init() {
 	elgg_register_action('share/share', "$actions_base/share.php");
 	elgg_register_action('share/delete', "$actions_base/delete.php");
 
+	/*
+	$handler, $name, $description, $context="all", $multiple=false
+	*/
+
+	elgg_register_widget_type('share', elgg_echo('share:widget:name'), elgg_echo('share:widget:description'));
+
 }
 
 function share_entity_menu_setup($hook, $type, $return, $params) {
